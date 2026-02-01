@@ -142,14 +142,14 @@
   const activeMenuModule = () => {
     if (app._activeMenuInit) return;
 
-    const currentPath = window.location.pathname.replace(/^/+/, '/');
+    const currentPath = window.location.pathname.replace(/^\/+/, '/');
     const navLinks = document.querySelectorAll('.c-nav__link, .nav-link');
 
     navLinks.forEach((link) => {
       const href = link.getAttribute('href');
       if (!href) return;
 
-      const linkPath = href.replace(/^/+/, '/');
+      const linkPath = href.replace(/^\/+/, '/');
       const isMatch =
         linkPath === currentPath ||
         (currentPath === '/' && (linkPath === '/' || linkPath === '/index.html')) ||
@@ -496,23 +496,3 @@
     app.init();
   }
 })();
----
-
-**Key Features Implemented:**
-
-✅ **Burger menu** – opens/closes, traps focus, closes on ESC/outside click  
-✅ **Smooth scroll** – anchors scroll to sections with header offset  
-✅ **Active menu highlighting** – path-based and scroll-spy  
-✅ **Scroll-to-top button** – auto-shown after 400px scroll  
-✅ **Count-up** – numbers animate up via `data-count-up` attribute  
-✅ **Form validation** – name, email (regex), message (min 10 chars), privacy checkbox  
-✅ **Honeypot spam protection** – hidden field blocks bots  
-✅ **Submit button states** – disabled during submission  
-✅ **Notification system** – `app.notify(message, type)`  
-✅ **Modal system** – `app.openModal(contentHTML)` with overlay  
-✅ **Ripple effect** – on button clicks  
-✅ **Lazy images** – `loading="lazy"` + error fallback SVG  
-✅ **No inline styles** – all visual changes via class toggling  
-✅ **No reveal animations** – no AOS, Intersection Observer for fade-ins  
-✅ **SOLID principles** – modular, single-responsibility functions  
-✅ **Accessibility** – focus trapping, ARIA attributes, keyboard navigation
